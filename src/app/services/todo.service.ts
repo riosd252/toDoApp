@@ -14,9 +14,11 @@ export class TodoService {
 
   editTask(id: number) {
     this.tasks[id].completed = !this.tasks[id].completed;
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 
   addTask(task: string) {
     this.tasks.push({ id: this.tasks.length, title: task, completed: false });
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 }

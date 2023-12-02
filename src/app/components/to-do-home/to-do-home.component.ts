@@ -19,6 +19,8 @@ export class ToDoHomeComponent implements OnInit {
       h1!.className = 'd-none';
       main!.classList.remove('d-none');
     }, 2000);
+
+    this.tasks = JSON.parse(localStorage.getItem('tasks') || '{}');
   }
 
   completeTask(id: number) {
