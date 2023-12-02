@@ -8,7 +8,7 @@ import { TodoService } from 'src/app/services/todo.service';
   styleUrls: ['./completed.component.scss'],
 })
 export class CompletedComponent implements OnInit {
-  completedTasks: Task[] = this.todoSrv.tasks;
+  completedTasks: Task[] = [];
 
   constructor(private todoSrv: TodoService) {}
 
@@ -18,6 +18,7 @@ export class CompletedComponent implements OnInit {
       const h1 = document.getElementById('h1');
       h1!.className = 'd-none';
       main!.classList.remove('d-none');
+      this.completedTasks = this.todoSrv.getTasks();
     }, 2000);
   }
 }

@@ -8,7 +8,7 @@ import { Task } from 'src/app/models/task';
   styleUrls: ['./to-do-home.component.scss'],
 })
 export class ToDoHomeComponent implements OnInit {
-  tasks: Task[] = this.todoSrv.tasks;
+  tasks: Task[] = [];
 
   constructor(private todoSrv: TodoService) {}
 
@@ -18,9 +18,8 @@ export class ToDoHomeComponent implements OnInit {
       const h1 = document.getElementById('h1');
       h1!.className = 'd-none';
       main!.classList.remove('d-none');
+      this.tasks = this.todoSrv.getTasks();
     }, 2000);
-
-    this.tasks = JSON.parse(localStorage.getItem('tasks') || '{}');
   }
 
   completeTask(id: number) {

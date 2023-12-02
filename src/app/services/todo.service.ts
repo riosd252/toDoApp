@@ -9,6 +9,7 @@ export class TodoService {
   constructor() {}
 
   getTasks() {
+    this.tasks = JSON.parse(localStorage.getItem('tasks') || '{}');
     return this.tasks;
   }
 
