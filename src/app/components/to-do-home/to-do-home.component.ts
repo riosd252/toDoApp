@@ -29,5 +29,8 @@ export class ToDoHomeComponent implements OnInit {
     setTimeout(() => {
       this.todoSrv.addTask(task);
     }, 2000);
+
+    const input = document.getElementById('input') as HTMLInputElement;
+    input.value = '';
   }
 }
