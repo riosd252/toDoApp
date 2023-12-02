@@ -17,7 +17,7 @@
   <ul class="d-flex justify-content-center" *ngFor="let task of tasks">
     <li
       class="w-50 d-flex justify-content-between border rounded p-2 shadow"
-      *ngIf="task && task.completed == false"
+      *ngIf="task.completed == false"
     >
       {{ this.tasks[task.id].title }}
       <button

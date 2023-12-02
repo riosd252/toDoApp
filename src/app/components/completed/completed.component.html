@@ -5,7 +5,7 @@
   <ul class="d-flex justify-content-center" *ngFor="let task of completedTasks">
     <li
       class="w-50 d-flex justify-content-between border rounded p-2 shadow"
-      *ngIf="task && task.completed == true"
+      *ngIf="task.completed == true"
     >
       {{ this.completedTasks[task.id].title }}
     </li>
