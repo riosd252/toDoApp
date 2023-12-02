@@ -15,7 +15,7 @@ export class CompletedComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       const main = document.getElementById('main');
-      const h1 = document.querySelector('h1');
+      const h1 = document.getElementById('h1');
       h1!.className = 'd-none';
       main!.classList.remove('d-none');
     }, 2000);
