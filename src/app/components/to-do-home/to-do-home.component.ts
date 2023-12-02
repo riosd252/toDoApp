@@ -14,6 +14,10 @@ export class ToDoHomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  completeTask(id: number) {
+    this.todoSrv.editTask(id);
+  }
+
   addTask(task: string): void {
     this.todoSrv.addTask(task);
   }

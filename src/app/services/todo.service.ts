@@ -12,6 +12,10 @@ export class TodoService {
     return this.tasks;
   }
 
+  editTask(id: number) {
+    this.tasks[id].completed = !this.tasks[id].completed;
+  }
+
   addTask(task: string) {
     this.tasks.push({ id: this.tasks.length, title: task, completed: false });
   }
