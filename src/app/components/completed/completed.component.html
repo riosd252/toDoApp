@@ -1,6 +1,9 @@
 <div class="mt-3 text-center">
-  <ul *ngFor="let task of completedTasks">
-    <li *ngIf="task.completed == true">
+  <ul class="d-flex justify-content-center" *ngFor="let task of completedTasks">
+    <li
+      class="w-50 d-flex justify-content-between border rounded p-2 shadow"
+      *ngIf="task.completed == true"
+    >
       {{ this.completedTasks[task.id].title }}
     </li>
   </ul>
