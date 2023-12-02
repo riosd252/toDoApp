@@ -30,7 +30,7 @@ export class ToDoHomeComponent implements OnInit {
       this.todoSrv.addTask(task);
     }, 2000);
 
-    const input = document.getElementById('input') as HTMLInputElement;
+    const input = document.querySelector('input') as HTMLInputElement;
     input.value = '';
   }
 }
