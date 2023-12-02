@@ -12,13 +12,22 @@ export class ToDoHomeComponent implements OnInit {
 
   constructor(private todoSrv: TodoService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => {
+      const main = document.getElementById('main');
+      const h1 = document.getElementById('h1');
+      h1!.className = 'd-none';
+      main!.classList.remove('d-none');
+    }, 2000);
+  }
 
   completeTask(id: number) {
     this.todoSrv.editTask(id);
   }
 
   addTask(task: string): void {
-    this.todoSrv.addTask(task);
+    setTimeout(() => {
+      this.todoSrv.addTask(task);
+    }, 2000);
   }
 }
