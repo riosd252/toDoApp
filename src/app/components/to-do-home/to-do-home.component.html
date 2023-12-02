@@ -1,0 +1,18 @@
+<form class="form mt-5 text-center">
+  <input type="text" #taskInput class="form-control w-75 d-inline-block" />
+  <button
+    type="button"
+    class="btn btn-outline-success ms-3"
+    (click)="addTask(taskInput.value)"
+  >
+    Aggiungi
+  </button>
+</form>
+
+<div class="mt-3 text-center">
+  <ul *ngFor="let task of tasks">
+    <li *ngIf="task.completed == false">
+      {{ this.tasks[task.id].title }}
+    </li>
+  </ul>
+</div>
